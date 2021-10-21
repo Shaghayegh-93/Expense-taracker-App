@@ -20,14 +20,10 @@
   justify-content: space-between;
   align-items: center;
 }
-/* .formInput {
-  display: flex;
-  justify-content: space-between;
-} */
+
 .container {
   display: flex;
   flex-direction: column;
-  /* width: 300px; */
   background-color: #fff;
   padding: 10px;
   border-radius: 5px;
@@ -81,22 +77,21 @@ form {
   justify-content: space-between;
   margin-bottom: 30px;
 }
-input{
+input {
   border: 1px solid #ccc;
   padding: 10px 12px;
   outline: none;
   border-radius: 5px;
-
 }
-input[type="radio"]{
+input[type="radio"] {
   margin-left: 10px;
 }
-.radioBox{
+.radioBox {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   font-size: 14px;
 }
-.radioBox label{
+.radioBox label {
   margin-left: 3px;
 }
