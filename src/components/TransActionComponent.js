@@ -1,7 +1,9 @@
-const TransActionComponent = () => {
+const TransActionComponent = ({ transactions }) => {
   return (
     <section>
-      <p>trans action</p>
+      {transactions.map((t) => (
+        <div key={t.id}>{t.desc} </div>
+      ))}
     </section>
   );
 };
