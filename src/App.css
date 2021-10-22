@@ -95,3 +95,26 @@ input[type="radio"] {
 .radioBox label {
   margin-left: 3px;
 }
+
+.transactions {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #f4f4f5;
+  font-weight: bold;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-right: 4px solid green;
+}
+
+input.search {
+  display: block;
+  border-radius: 5px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  background-color: #efefef;
+
+  width: 93%;
+
+  margin: 20px 0;
+}
