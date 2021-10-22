@@ -6,6 +6,9 @@ const ExpenseApp = () => {
   const [income, setIncome] = useState(0);
   const [expense, setExpense] = useState(0);
   const [transactions, setTransactions] = useState([]);
+  const [searchItem, setSearchItem] = useState("");
+  const [filterdTnx, setFilterdTnx] = useState(transactions);
+
   const addTransaction = (formValues) => {
     setTransactions([...transactions, { ...formValues, id: Date.now() }]);
   };
@@ -13,12 +16,30 @@ const ExpenseApp = () => {
     let exp = 0;
     let inc = 0;
     transactions.forEach((t) => {
-       t.type === "expense"
-        ? (exp = exp +parseFloat(t.amount ))
-        : (inc = inc +parseFloat(t.amount) );
+      t.type === "expense"
+        ? (exp = exp + parseFloat(t.amount))
+        : (inc = inc + parseFloat(t.amount));
     });
     setExpense(exp);
     setIncome(inc);
+  }, [transactions]);
+  const changeHandler = (e) => {
+    setSearchItem(e.target.value);
+    filterTransactions(e.target.value);
+  };
+  const filterTransactions = (search) => {
+    if (!search || search === "") {
+      setFilterdTnx(transactions);
+      return;
+    }
+
+    const filterd = transactions.filter((t) =>
+      t.desc.toLowerCase().includes(search.toLowerCase())
+    );
+    setFilterdTnx(filterd);
+  };
+  useEffect(() => {
+    filterTransactions(searchItem);
   }, [transactions]);
 
   return (
@@ -28,7 +49,12 @@ const ExpenseApp = () => {
         expense={expense}
         addTransaction={addTransaction}
       />
-      <TransActionComponent transactions={transactions} />
+      <TransActionComponent
+        transactions={transactions}
+        searchItem={searchItem}
+        changeHandler={changeHandler}
+        filterdTnx={filterdTnx}
+      />
     </section>
   );
 };
