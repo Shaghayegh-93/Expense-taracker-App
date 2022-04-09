@@ -4,7 +4,7 @@ const TransActionComponent = ({
   changeHandler,
   filterdTnx,
 }) => {
-  if (!transactions.length) return <h2>add some tranactions</h2>;
+  if (!transactions.length) return <p className="toggleInfoText">Add Some Tranactions</p>;
   return (
     <section>
       <input
