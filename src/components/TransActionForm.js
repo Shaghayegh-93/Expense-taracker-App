@@ -16,13 +16,23 @@ const TransActionForm = ({ addTransaction, setIsShow }) => {
   };
   return (
     <form onSubmit={submitHandler}>
+      <label id="title" htmlFor="title">
+        Text
+      </label>
       <input
+        placeholder="Enter text..."
+        id="title"
         type="text"
         name="desc"
         onChange={changeHandler}
         value={formValues.desc}
+        style={{ marginBottom: "10px" }}
       ></input>
+      <label id="aount" htmlFor="amount">
+        Amount
+      </label>
       <input
+        id="amount"
         type="number"
         name="amount"
         onChange={changeHandler}
@@ -49,7 +59,7 @@ const TransActionForm = ({ addTransaction, setIsShow }) => {
         />
         <label htmlFor="income">Income</label>
       </div>
-      <button className="btn primary" type="submit">
+      <button className="btn primary " type="submit">
         Add transaction
       </button>
     </form>
