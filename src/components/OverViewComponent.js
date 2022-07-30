@@ -11,7 +11,7 @@ const OverViewComponent = ({ income, expense, addTransaction }) => {
           className={`btn ${isShow && "cancel"}`}
           onClick={() => setIsShow((prevState) => !prevState)}
         >
-          {isShow ? "cancel" : "Add"}
+          {isShow ? "cancel" : "Add New Transaction"}
         </button>
       </div>
       {isShow && (
